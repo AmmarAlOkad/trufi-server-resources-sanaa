@@ -5,6 +5,11 @@ mkdir ./temp/otp
 
 wget -O ./input.osm.pbf "https://download.geofabrik.de$geofabrik_url_path"
 
+wget http://m.m.i24.cc/osmconvert64 -O osmconvert
+chmod +x osmconvert
+sudo mv osmconvert /usr/local/bin/
+osmconvert --help
+
 echo "\033[0;33mExtracting .osm.pbf file ...\033[0;m"
 # osmium extract --bbox=$bbox  --set-bounds  ./input.osm.pbf  --output "./temp/otp/$city.osm.pbf"
 osmconvert ./input.osm.pbf -b=$bbox --complete-ways --complete-multipolygons -o="./temp/otp/$city.osm.pbf"

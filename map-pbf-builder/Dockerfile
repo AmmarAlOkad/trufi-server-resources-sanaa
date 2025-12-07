@@ -4,10 +4,10 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt update
 # RUN apt install -y osmium-tool wget unzip
-RUN wget http://m.m.i24.cc/osmconvert64 -O osmconvert
-RUN chmod +x osmconvert
-RUN sudo mv osmconvert /usr/local/bin/
-RUN osmconvert --help
+# RUN wget http://m.m.i24.cc/osmconvert64 -O osmconvert
+# RUN chmod +x osmconvert
+# RUN sudo mv osmconvert /usr/local/bin/
+# RUN osmconvert --help
 
 
 WORKDIR /app
