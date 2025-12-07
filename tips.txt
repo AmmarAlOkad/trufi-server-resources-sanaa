@@ -1,0 +1,15 @@
+export envfile="./config/Yemen-AmanatAlAsimah.env"
+source $envfile
+echo $city
+
+dos2unix run.sh
+dos2unix -o run.sh
+
+sudo docker-compose up
+docker-compose build --no-cache
+docker-compose -f ./docker-compose.yml up --build
+
+cd ~/trufi-server-resources && node ./gtfs-builder/cities/Yemen-AmanatAlAsimah
+
+chmod u+x docker-compose.yml
+sudo chown -R $USER:$USER ./data

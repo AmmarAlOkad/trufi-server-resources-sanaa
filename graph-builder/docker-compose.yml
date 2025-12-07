@@ -1,0 +1,12 @@
+version: '3'
+services:
+  trufi-otp:
+    container_name: trufi-otp
+    build:
+      context: ./$otpversion
+      dockerfile: Dockerfile
+    # ports:
+    #   - "8000:8080"
+    # restart: unless-stopped
+    volumes: 
+      - ../data/$city/otp/data:/app/graphs

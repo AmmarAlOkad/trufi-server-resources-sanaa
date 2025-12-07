@@ -1,0 +1,9 @@
+1  export envfile="./config/Yemen-AmanatAlAsimah.env"
+
+2  map-pbf-builder	:	docker-compose --env-file ../$envfile -f docker-compose.yml up
+
+3  gtfs-builder		:	cd ./gtfs-builder && npm install && cd .. && node ./gtfs-builder/cities/Yemen-AmanatAlAsimah
+
+4  graph-builder	:	sudo docker-compose --env-file ../$envfile up --build
+
+6  sudo chown -R $USER:$USER ./data
