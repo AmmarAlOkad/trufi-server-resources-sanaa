@@ -22,8 +22,8 @@ cd ../../../../..
 
 cd graph-builder && sudo docker-compose --env-file ../$envfile up && cd ..
 
-cp -f ./data/Yemen-AmanatAlAsimah/otp/data/Graph.obj \
-../trufi-server-modules/otp/data
+# cp -f ./data/Yemen-AmanatAlAsimah/otp/data/Graph.obj \
+# ../trufi-server-modules/otp/data
 
 # scp -i ~/.ssh/trufi-ssh.pem ./data/Yemen-AmanatAlAsimah/otp/data/Graph.obj \
 # ec2-user@3.28.123.11:/home/ec2-user/otp-java-dirctly/graphs
